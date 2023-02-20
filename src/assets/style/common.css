@@ -1,0 +1,74 @@
+:root {
+  --black: #2D2D2D;
+  --white: #FFFFFF;
+  --red: #E81515;
+  --orange1: #FFAB05;
+  --orange2: #EDA100;
+  --gray1: #828282;
+  --gray2: #E5E5E5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p,
+a {
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.0;
+  color: var(--black);
+}
+a,
+a:hover {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.fs64 {
+  font-size: 6.4rem;
+}
+.fs24 {
+  font-size: 2.4rem;
+}
+.w6 {
+  font-weight: 600;
+}
+.lh150 {
+  line-height: 1.5;
+}
+
+.mt24 {
+  margin-top: 2.4rem;
+}
+.mt48 {
+  margin-top: 4.8rem;
+}
+
+html {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 10px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  background-color: var(--white);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.6rem 3.2rem;
+  border-radius: 999rem;
+}
+.btn--orange {
+  background-color: var(--orange1);
+  color: var(--white);
+}
+.btn:hover {
+  background-color: var(--orange2);
+  color: var(--white);
+}
