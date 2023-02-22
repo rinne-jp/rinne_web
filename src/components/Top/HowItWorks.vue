@@ -1,15 +1,17 @@
 <template>
-  <div id="how-it-works" class="how-it-works">
-    <div class="vertical-line"></div>
-    <div class="title__wrapper">
-      <p class="fs48">How It Works</p>
-      <p class="mt8 fs24">rinneアプリの特徴</p>
-    </div>
-      <div class="card__wrapper">
-        <template v-for="item in features" :key="item.index">
-          <FeatureCard :num="item.num" :appeal="item.appeal" :description="item.description" :src="item.src" />
-        </template>
+  <div class="contents">
+    <div id="how-it-works" class="how-it-works">
+      <div class="vertical-line"></div>
+      <div class="title__wrapper">
+        <p class="fs48">How It Works</p>
+        <p class="mt8 fs24">rinneアプリの特徴</p>
       </div>
+        <div class="card__wrapper">
+          <template v-for="item in features" :key="item.index">
+            <FeatureCard :num="item.num" :appeal="item.appeal" :description="item.description" :src="item.src" />
+          </template>
+        </div>
+    </div>
   </div>
 </template>
 

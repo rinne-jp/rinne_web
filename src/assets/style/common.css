@@ -4,6 +4,8 @@
   --red: #E81515;
   --orange1: #FFAB05;
   --orange2: #EDA100;
+  --orange3: #FFC551;
+  --orange4: #FFEFD1;
   --gray1: #828282;
   --gray2: #E5E5E5;
 }
@@ -28,6 +30,9 @@ a:hover {
 
 .fs14 {
   font-size: 1.4rem;
+}
+.fs16 {
+  font-size: 1.6rem;
 }
 .fs20 {
   font-size: 2rem;
@@ -54,6 +59,9 @@ a:hover {
 .mt8 {
   margin-top: 0.8rem;
 }
+.mt16 {
+  margin-top: 1.6rem;
+}
 .mt24 {
   margin-top: 2.4rem;
 }
@@ -75,12 +83,17 @@ html {
     Arial, sans-serif;
   font-size: 10px;
   word-spacing: 1px;
+  scroll-behavior: smooth;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: var(--white);
+}
+
+.contents {
+  height: 100vh;
 }
 
 .btn {
@@ -93,6 +106,34 @@ html {
   color: var(--white);
 }
 .btn:hover {
+  background-color: var(--orange2);
+  color: var(--white);
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+}
+.input {
+  padding: 1.6rem 3.2rem;
+  font-weight: 600;
+  line-height: 1.0;
+  font-size: 1.6rem;
+  border-radius: 1.2rem;
+}
+.input--orange {
+  background-color: var(--orange1);
+  color: var(--white);
+}
+.input:hover {
   background-color: var(--orange2);
   color: var(--white);
 }
