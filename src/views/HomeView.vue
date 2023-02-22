@@ -18,3 +18,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.home {
+  scroll-snap-type: y;
+}
+</style>

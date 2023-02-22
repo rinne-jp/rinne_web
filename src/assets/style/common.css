@@ -26,11 +26,20 @@ a:hover {
   color: var(--black);
 }
 
-.fs64 {
-  font-size: 6.4rem;
+.fs14 {
+  font-size: 1.4rem;
+}
+.fs20 {
+  font-size: 2rem;
 }
 .fs24 {
   font-size: 2.4rem;
+}
+.fs48 {
+  font-size: 4.8rem;
+}
+.fs64 {
+  font-size: 6.4rem;
 }
 .w6 {
   font-weight: 600;
@@ -39,11 +48,26 @@ a:hover {
   line-height: 1.5;
 }
 
+.mt4 {
+  margin-top: 0.4rem;
+}
+.mt8 {
+  margin-top: 0.8rem;
+}
 .mt24 {
   margin-top: 2.4rem;
 }
 .mt48 {
   margin-top: 4.8rem;
+}
+
+*,
+*:before,
+*:after {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
