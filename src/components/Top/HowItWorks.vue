@@ -61,6 +61,7 @@ export default {
   background: var(--orange1);
   height: 100vh;
   overflow: hidden;
+  scroll-snap-align: start;
 }
 .title__wrapper {
   margin: 2.4rem auto 7.2rem;

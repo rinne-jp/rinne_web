@@ -2,27 +2,29 @@
   <div class="home">
     <TopKeyVisual />
     <TopHowItWorks />
-    <FormEmail />
+    <TopFormEmail />
   </div>
 </template>
 
 <script>
 import TopKeyVisual from '@/components/Top/KeyVisual.vue'
 import TopHowItWorks from '@/components/Top/HowItWorks.vue'
-import FormEmail from '@/components/Top/FormEmail.vue'
+import TopFormEmail from '@/components/Top/FormEmail.vue'
 
 export default {
   name: 'HomeView',
   components: {
     TopKeyVisual,
     TopHowItWorks,
-    FormEmail,
+    TopFormEmail,
   }
 }
 </script>
 
 <style scoped>
 .home {
-  scroll-snap-type: y;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
 }
 </style>
