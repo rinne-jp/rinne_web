@@ -123,6 +123,7 @@ export default {
   background: var(--orange1);
   color: var(--white);
   border-radius:  1.2rem;
+  cursor: pointer;
 }
 .error-msg {
   color: var(--red);

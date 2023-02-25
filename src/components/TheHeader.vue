@@ -1,10 +1,15 @@
 <template>
   <header>
     <div class="header__wrapper">
-      <img class="header-img" src="@/assets/image/logo.png" alt="ロゴ" >
+      <router-link to="/">
+        <img class="header-img" src="@/assets/image/logo.png" alt="ロゴ" >
+      </router-link>
       <div class="row">
-        <router-link to="/">Home</router-link>
-        <router-link to="/contact">Contact</router-link>
+        <router-link to="/">ホーム</router-link>
+        <router-link to="/contact" class="btn-contact btn btn--orange">
+          <img class="email-img" src="@/assets/image/email.svg" alt="お問い合わせ">
+          <p>お問い合わせ</p>
+        </router-link>
       </div>
     </div>
   </header>
@@ -40,10 +45,31 @@ header {
   width: 6.4rem;
   height: 6.4rem;
 }
+.row {
+  display: flex;
+  align-items: center;
+}
 header a {
   margin-left: 3.2rem;
 }
 header a:hover {
   text-decoration: underline;
+}
+.btn-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.4rem 3.2rem;
+}
+.btn-contact:hover {
+  text-decoration: none;
+}
+.btn-contact p {
+  color: var(--white);
+}
+.email-img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.4rem;
 }
 </style>

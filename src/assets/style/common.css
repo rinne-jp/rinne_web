@@ -100,6 +100,7 @@ html {
   display: inline-block;
   padding: 1.6rem 3.2rem;
   border-radius: 999rem;
+  cursor: pointer;
 }
 .btn--orange {
   background-color: var(--orange1);
