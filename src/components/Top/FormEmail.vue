@@ -20,7 +20,7 @@
             />
           </div>
           <input
-            class="btn-submit input input--orange"
+            class="btn-submit btn btn--orange w6 fs16"
             value="送信"
             type="submit"
           />
@@ -94,7 +94,7 @@ export default {
     width: 1.6rem;
     height: 1.6rem;
     display: inline-block;
-    background-color: var(--orange1);
+    background: var(--orange1);
     border-radius:  50%;
 }
 .form-item__wrapper {
@@ -105,25 +105,14 @@ export default {
 
 .input-email {
   width: 44.8rem;
-  padding: 1.6rem 3.2rem;
   border: 2px solid var(--orange3);
-  border-radius:  1.2rem;
-  color: var(--orange3);
-  background: var(--orange4);
-}
-.input-email:focus {
-  color: var(--orange3);
-  background: var(--white);
 }
 .input-error {
   border: 2px solid var(--red);
 }
 .btn-submit {
   margin-left: 1.6rem;
-  background: var(--orange1);
-  color: var(--white);
   border-radius:  1.2rem;
-  cursor: pointer;
 }
 .error-msg {
   color: var(--red);

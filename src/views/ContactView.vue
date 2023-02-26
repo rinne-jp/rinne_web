@@ -1,5 +1,17 @@
 <template>
   <div class="contact">
-    <h1>This is a contact page</h1>
+    <FormContact />
   </div>
 </template>
+
+<script>
+import FormContact from '@/components/FormContact.vue'
+
+export default {
+  name: 'ContactView',
+  components: {
+    FormContact,
+  }
+}
+
+</script>

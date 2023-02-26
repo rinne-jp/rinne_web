@@ -27,6 +27,14 @@ a:hover {
   text-decoration: none;
   color: var(--black);
 }
+label {
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.0;
+  color: var(--black);
+  text-align: left;
+}
 
 .fs14 {
   font-size: 1.4rem;
@@ -89,7 +97,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background-color: var(--white);
+  background: var(--white);
 }
 
 .contents {
@@ -108,11 +116,11 @@ html {
   cursor: pointer;
 }
 .btn--orange {
-  background-color: var(--orange1);
+  background: var(--orange1);
   color: var(--white);
 }
 .btn:hover {
-  background-color: var(--orange2);
+  background: var(--orange2);
   color: var(--white);
 }
 
@@ -133,13 +141,16 @@ input {
   font-weight: 600;
   line-height: 1.0;
   font-size: 1.6rem;
+  border: 2px solid var(--orange4);
   border-radius: 1.2rem;
+  color: var(--black);
+  background: var(--orange4);
+  box-sizing: border-box;
 }
-.input--orange {
-  background-color: var(--orange1);
-  color: var(--white);
+.input:focus {
+  border: 2px solid var(--orange3);
+  background: var(--white);
 }
-.input:hover {
-  background-color: var(--orange2);
-  color: var(--white);
+.input::placeholder {
+  color: var(--orange3);
 }

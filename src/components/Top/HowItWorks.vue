@@ -3,7 +3,7 @@
     <div id="how-it-works" class="how-it-works" :style="{top: this.top + 'px'}">
       <div class="vertical-line"></div>
       <div class="title__wrapper">
-        <p class="fs48">How It Works</p>
+        <p class="w6 fs48">How It Works</p>
         <p class="mt8 fs24">rinneアプリの特徴</p>
       </div>
         <div class="card__wrapper" :style="{left: this.left + 'px'}">
@@ -58,7 +58,6 @@ export default {
       const leftMax = this.width - 1704;
       if (leftMax < 0) {
         if (window.scrollY >= this.height && window.scrollY < this.height * 5) {
-          console.log(window.scrollY)
           this.top = window.scrollY - this.height;
           this.left = ((window.scrollY - this.height) / (this.height * 4)) * leftMax;
         }
