@@ -1,12 +1,12 @@
 <template>
-  <div class="contents">
-    <div id="how-it-works" class="how-it-works">
+  <div class="contents-scroll">
+    <div id="how-it-works" class="how-it-works" :style="{top: this.top + 'px'}">
       <div class="vertical-line"></div>
       <div class="title__wrapper">
         <p class="fs48">How It Works</p>
         <p class="mt8 fs24">rinneアプリの特徴</p>
       </div>
-        <div class="card__wrapper">
+        <div class="card__wrapper" :style="{left: this.left + 'px'}">
           <template v-for="item in features" :key="item.index">
             <FeatureCard :num="item.num" :appeal="item.appeal" :description="item.description" :src="item.src" />
           </template>
@@ -20,6 +20,10 @@ import FeatureCard from '@/components/Card/FeatureCard.vue'
 export default {
   data() {
     return {
+      width: 0,
+      height: 0,
+      top: 0,
+      left: 0,
       features: [
         {
           num: 1,
@@ -49,6 +53,23 @@ export default {
       ]
     }
   },
+  methods: {
+    getScroll() {
+      const leftMax = this.width - 1704;
+      if (leftMax < 0) {
+        if (window.scrollY >= this.height && window.scrollY < this.height * 5) {
+          console.log(window.scrollY)
+          this.top = window.scrollY - this.height;
+          this.left = ((window.scrollY - this.height) / (this.height * 4)) * leftMax;
+        }
+      }
+    },
+  },
+  mounted() {
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+    window.addEventListener('scroll', this.getScroll);
+  },
   components: {
     FeatureCard,
   },
@@ -61,7 +82,6 @@ export default {
   background: var(--orange1);
   height: 100vh;
   overflow: hidden;
-  scroll-snap-align: start;
 }
 .title__wrapper {
   margin: 2.4rem auto 7.2rem;

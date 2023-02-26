@@ -19,9 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
     padding: calc((100vh - (37.5vw + 4.8rem)) / 2) 12.0rem;
-    scroll-snap-align: start;
   }
   .headline {
     font-size: 6.4rem;

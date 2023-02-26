@@ -83,9 +83,7 @@ export default {
 .form-email {
   margin: 0 auto;
   padding-top: calc((100vh - 8.4rem) / 2);
-  height: 100vh;
   width: 56.0rem;
-  scroll-snap-align: start;
 }
 .text-merit {
   margin-left: 0.8rem;

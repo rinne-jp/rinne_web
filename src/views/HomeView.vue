@@ -25,6 +25,6 @@ export default {
 .home {
   overflow: auto;
   scroll-snap-type: y mandatory;
-  height: 100vh;
+  /* height: 100vh; */
 }
 </style>

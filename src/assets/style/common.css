@@ -94,6 +94,11 @@ html {
 
 .contents {
   height: 100vh;
+  scroll-snap-align: start;
+}
+.contents-scroll {
+  height: 500vh;
+  background: var(--orange1);
 }
 
 .btn {
