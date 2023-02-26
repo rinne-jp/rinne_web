@@ -11,7 +11,6 @@
               class="input-email input"
               :class="{ 'input-error': email_error }"
               type="text"
-              area-label="email"
               :id="'entry.' + survey[0].name"
               :name="'entry.' + survey[0].name"
               v-model="email"
@@ -106,6 +105,9 @@ export default {
 .input-email {
   width: 44.8rem;
   border: 2px solid var(--orange3);
+}
+.input-email::placeholder {
+  color: var(--orange3);
 }
 .input-error {
   border: 2px solid var(--red);

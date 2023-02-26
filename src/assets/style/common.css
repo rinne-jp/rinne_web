@@ -148,9 +148,12 @@ input {
   box-sizing: border-box;
 }
 .input:focus {
-  border: 2px solid var(--orange3);
+  border: 2px solid var(--orange1);
   background: var(--white);
 }
-.input::placeholder {
-  color: var(--orange3);
+.input-error {
+  border: 2px solid var(--red);
+}
+.error-msg {
+  color: var(--red);
 }

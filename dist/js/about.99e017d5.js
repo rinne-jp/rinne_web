@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkrouter_app"]=self["webpackChunkrouter_app"]||[]).push([[443],{3681:function(n,t,r){r.r(t),r.d(t,{default:function(){return f}});var a=r(3396);const c={class:"contact"},e=(0,a._)("h1",null,"This is a contact page",-1),u=[e];function s(n,t){return(0,a.wg)(),(0,a.iD)("div",c,u)}var o=r(89);const i={},p=(0,o.Z)(i,[["render",s]]);var f=p}}]);
-//# sourceMappingURL=about.99e017d5.js.map
