@@ -67,7 +67,7 @@ export default {
   props: ["sp"],
   data() {
     return {
-      submitted: true,
+      submitted: false,
       input: {
         company: '',
         name: '',
