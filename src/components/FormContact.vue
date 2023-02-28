@@ -5,7 +5,7 @@
         <p class="w6 fs48">Contact</p>
         <p class="mt8 fs24">お問い合わせ</p>
       </div>
-      <form v-if="!submitted" name="gf_form" class="form__wrapper" method="POST" target="hidden_iframe" :action="gf_doc" @submit.prevent="validationCheck">
+      <form v-if="!submitted" name="gf_form" class="form__wrapper" @submit.prevent="validationCheck">
         <div v-for="item in survey" :key="item" class="form-item">
           <label :for="item.label">
             {{ item.question }}
@@ -60,6 +60,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'FormContact',
   data() {
@@ -130,18 +132,30 @@ export default {
       }
       this.error.message = !this.input.message ? 'お問い合わせ内容を入力してください' : '';
       if (!this.error.name && !this.error.email && !this.error.message) {
-        document.gf_form.submit();
+        this.submit();
         this.submitted = true;
       }
     },
+    submit() {
+      const submitParams = new FormData();
+      Object.keys(this.input).forEach((key) => {
+        this.survey.forEach((item) => {
+          if (item.label === key) {
+            submitParams.append('entry.' + item.name, this.input[key])
+          }
+        })
+      })
+
+      axios
+        .post(this.gf_doc, submitParams)
+        .then(() => {
+          console.log('success');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   },
-  // Googleフォームのサンキューページに遷移しないようにする
-  mounted: function() {
-    var iframe = document.createElement("iframe");
-    iframe.setAttribute('name','hidden_iframe');
-    iframe.setAttribute('style','display: none');
-    document.body.appendChild(iframe);
-  }
 }
 
 </script>
@@ -183,6 +197,9 @@ export default {
 .input-contact:focus {
   outline: none;
   border: 2px solid var(--orange1);
+}
+.input-contact::placeholder {
+  color: var(--gray2);
 }
 .input-error {
   border: 2px solid var(--red);

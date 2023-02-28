@@ -4,15 +4,15 @@
       <div class="textーmerit__wrapper">
         <p class="text-merit w6 fs20">rinneの最新情報を受け取る</p>
       </div>
-      <form name="gf_form" class="form__wrapper mt16" method="POST" target="hidden_iframe" :action="gf_doc" @submit.prevent="validationCheck">
+      <form name="gf_form" class="form__wrapper mt16" @submit.prevent="validationCheck">
         <div class="form-item__wrapper">
           <div class="form-item">
             <input
               class="input-email input"
               :class="{ 'input-error': email_error }"
               type="text"
-              :id="'entry.' + survey[0].name"
               :name="'entry.' + survey[0].name"
+              :id = "survey[0].label"
               v-model="email"
               :placeholder="survey[0].placeholder"
               :disabled="submitted"
@@ -36,13 +36,15 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'FormEmail',
   data() {
     return {
+      submitted: false,
       email: '',
       email_error: '',
-      submitted: false,
       gf_doc: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSfTp3pDSzbpZ5u7UFx6o0ATw-soUb5vx9a6Vch7knTU_Ui8Lg/formResponse',
       survey: [
         {
@@ -61,20 +63,26 @@ export default {
         this.email_error = 'メールアドレスを入力してください';
       } else if (!this.email.match(/^[a-zA-Z0-9_+-]+(.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/)) {
         this.email_error = 'メールアドレスの形式が正しくありません';
-      } else {
-        document.gf_form.submit();
+      } else if (!this.submitted) {
+        this.submit();
         this.submitted = true;
         this.email_error = '';
       }
     },
+    submit() {
+      const submitParams = new FormData();
+      submitParams.append('entry.1537271753', this.email);
+
+      axios
+          .post(this.gf_doc, submitParams)
+          .then(() => {
+            console.log('success');
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+    }
   },
-  // Googleフォームのサンキューページに遷移しないようにする
-  mounted: function() {
-    var iframe = document.createElement("iframe");
-    iframe.setAttribute('name','hidden_iframe');
-    iframe.setAttribute('style','display: none');
-    document.body.appendChild(iframe);
-  }
 }
 </script>
 
