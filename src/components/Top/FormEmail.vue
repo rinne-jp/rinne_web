@@ -4,7 +4,7 @@
       <div class="textーmerit__wrapper">
         <p class="text-merit w6 fs20">rinneの最新情報を受け取る</p>
       </div>
-      <form name="gf_form" class="form__wrapper mt16" @submit.prevent="validationCheck">
+      <form name="gf_form" class="form__wrapper mt24" @submit.prevent="validationCheck">
         <div class="form-item__wrapper">
           <div class="form-item">
             <input
@@ -75,9 +75,7 @@ export default {
 
       axios
           .post(this.gf_doc, submitParams)
-          .then(() => {
-            console.log('success');
-          })
+          .then()
           .catch((error) => {
             console.log(error);
           });
@@ -88,9 +86,9 @@ export default {
 
 <style scoped>
 .form-email {
-  margin: 0 auto;
-  padding-top: calc((100vh - 8.4rem) / 2);
   width: 56.0rem;
+  margin: 0 auto;
+  padding: calc((100vh - 9.2rem) / 2) 0 0;
 }
 .text-merit {
   margin-left: 0.8rem;
@@ -121,6 +119,7 @@ export default {
   border: 2px solid var(--red);
 }
 .btn-submit {
+  width: 9.6rem;
   margin-left: 1.6rem;
   border-radius:  1.2rem;
 }
@@ -128,4 +127,13 @@ export default {
   color: var(--red);
 }
 
+@media screen and (max-width: 768px) {
+  .form-email {
+    width: 100%;
+    padding: calc((100vh - 9.2rem) / 2) 3.2rem 0;
+  }
+  .input-email {
+    width: calc(100vw - 17.6rem);
+  }
+}
 </style>

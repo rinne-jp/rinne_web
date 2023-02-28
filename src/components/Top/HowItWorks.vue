@@ -115,4 +115,10 @@ export default {
   left: 0;
   margin: 7.2rem 1.6rem auto 4.8rem;
 }
+
+@media screen and (max-width: 768px) {
+  .card__wrapper {
+    margin: 8.8rem 1.6rem auto 3.2rem;
+  }
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <TopKeyVisual />
+    <TopKeyVisual :sp="sp"/>
     <TopHowItWorks />
     <TopFormEmail />
   </div>
@@ -13,6 +13,7 @@ import TopFormEmail from '@/components/Top/FormEmail.vue'
 
 export default {
   name: 'HomeView',
+  props: ["sp"],
   components: {
     TopKeyVisual,
     TopHowItWorks,

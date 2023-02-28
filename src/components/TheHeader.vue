@@ -37,7 +37,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 5%;
+  padding: 0.8rem 12.0rem;
   background: var(--white);
   box-shadow: 0px 1px 0px var(--gray2);
 }
@@ -49,7 +49,7 @@ header {
   display: flex;
   align-items: center;
 }
-header a {
+header a:not(:first-child) {
   margin-left: 3.2rem;
 }
 header a:hover {
@@ -71,5 +71,11 @@ header a:hover {
   width: 2.4rem;
   height: 2.4rem;
   margin-right: 0.4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .header__wrapper {
+    padding: 0.8rem 3.2rem;
+  }
 }
 </style>

@@ -50,8 +50,8 @@
           <img class="check-img" src="@/assets/image/check.svg" alt="チェック">
           <p class="thanks-title fs20">お問い合わせが完了しました！</p>
         </div>
-        <P class="mt48 lh150">
-          この度はお問い合わせいただき誠にありがとうございます。<br />
+        <P class="thanks-text mt48 lh150">
+          この度はお問い合わせいただき、<br v-show="sp"/>誠にありがとうございます。<br />
           ２〜３営業日以内に担当者よりご連絡させていただきますので少々お待ち下さい。
         </P>
       </div>
@@ -64,9 +64,10 @@ import axios from 'axios';
 
 export default {
   name: 'FormContact',
+  props: ["sp"],
   data() {
     return {
-      submitted: false,
+      submitted: true,
       input: {
         company: '',
         name: '',
@@ -148,9 +149,7 @@ export default {
 
       axios
         .post(this.gf_doc, submitParams)
-        .then(() => {
-          console.log('success');
-        })
+        .then()
         .catch((error) => {
           console.log(error);
         });
@@ -228,9 +227,27 @@ export default {
   margin: 0 auto;
   padding-right: 3.2rem;
 }
+.thanks-text {
+  padding: 0 1.6rem;
+}
 .check-img {
   width: 3.2rem;
   height: 3.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .form-contact {
+    padding: 8.0rem 3.2rem;
+  }
+  .form__wrapper {
+    width: calc(100vw - 6.4rem);
+  }
+  .thanks__wrapper {
+    width: calc(100vw - 6.4rem);
+  }
+  .thanks-title {
+    padding: 0;
+  }
 }
 
 </style>

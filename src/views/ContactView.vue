@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <FormContact />
+    <FormContact :sp="sp"/>
   </div>
 </template>
 
@@ -9,6 +9,7 @@ import FormContact from '@/components/FormContact.vue'
 
 export default {
   name: 'ContactView',
+  props: ["sp"],
   components: {
     FormContact,
   }
