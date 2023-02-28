@@ -91,7 +91,6 @@ html {
     Arial, sans-serif;
   font-size: 10px;
   word-spacing: 1px;
-  scroll-behavior: smooth;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -104,8 +103,7 @@ html {
   height: 100vh;
   scroll-snap-align: start;
 }
-.contents-scroll {
-  height: 500vh;
+.contents--orange {
   background: var(--orange1);
 }
 
@@ -156,4 +154,16 @@ input {
 }
 .error-msg {
   color: var(--red);
+}
+
+@media screen and (max-width: 1152px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 8px;
+  }
 }

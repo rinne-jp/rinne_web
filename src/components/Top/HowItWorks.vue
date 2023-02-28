@@ -1,5 +1,5 @@
 <template>
-  <div class="contents-scroll">
+  <div class="contents-orange" :class="{'contents-scroll': isScroll}">
     <div id="how-it-works" class="how-it-works" :style="{top: this.top + 'px'}">
       <div class="vertical-line"></div>
       <div class="title__wrapper">
@@ -22,6 +22,8 @@ export default {
     return {
       width: 0,
       height: 0,
+      rem: 10,
+      isScroll: false,
       top: 0,
       left: 0,
       features: [
@@ -54,12 +56,20 @@ export default {
     }
   },
   methods: {
-    getScroll() {
-      const leftMax = this.width - 1704;
+    getScroll() {      
+    if (this.width <= 1024) {
+        this.rem = 8;
+      } else if (this.width <= 1152) {
+        this.rem = 9;
+      } else { 
+        this.rem = 10;
+      }
+      const leftMax = this.width - 170.4 * this.rem;
       if (leftMax < 0) {
+        this.isScroll = true;
         if (window.scrollY >= this.height && window.scrollY < this.height * 5) {
-          this.top = window.scrollY - this.height;
-          this.left = ((window.scrollY - this.height) / (this.height * 4)) * leftMax;
+          this.top = (window.scrollY - this.height);
+          this.left = (((window.scrollY - this.height) / (this.height * 4)) * leftMax);
         }
       }
     },
@@ -81,6 +91,9 @@ export default {
   background: var(--orange1);
   height: 100vh;
   overflow: hidden;
+}
+.contents-scroll {
+  height: 500vh;
 }
 .title__wrapper {
   margin: 2.4rem auto 7.2rem;
